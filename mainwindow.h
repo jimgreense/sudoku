@@ -24,6 +24,8 @@ public:
 
     Suduko *sudu;
 
+    bool checkdata();  // check if the data on the table is valid
+
 protected slots:
     void onButtonSolveClicked();
     void onButtonInitClicked();

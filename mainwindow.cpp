@@ -60,14 +60,15 @@ void MainWindow::onButtonSolveClicked()
         }
 
     if (sudu->solve())
+    {
         sudu->pretty_print();
 
-    for (int i = 0; i < 9; i++)
-        for (int j = 0; j < 9; j++)
-        {
-            tableitems[i][j]->setText(QString::number(sudu->get_element(i,j)));
+        for (int i = 0; i < 9; i++)
+            for (int j = 0; j < 9; j++)
+            {
+                tableitems[i][j]->setText(QString::number(sudu->get_element(i,j)));
+            }
         }
-
 }
 
 void MainWindow::onButtonInitClicked()
@@ -91,5 +92,10 @@ void MainWindow::onButtonClearClicked()
 
 MainWindow::~MainWindow()
 {
+}
+
+bool MainWindow::checkdata()
+{
+    return true;
 }
 

@@ -96,7 +96,10 @@ bool Suduko::backtrace(int index)
     int col = index % COLSIZE;
 
     if (0 != elements[row][col]) {
-        return backtrace(index+1);
+        if (isOK(row, col, elements[row][col]))  // the input maybe wrong
+            return backtrace(index+1);
+        else
+            return false;
     }
 
     else {
